@@ -11,6 +11,7 @@
 		432EA306294A049400BAB3BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432EA305294A049400BAB3BA /* ContentView.swift */; };
 		432EA308294A049500BAB3BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 432EA307294A049500BAB3BA /* Assets.xcassets */; };
 		432EA30B294A049500BAB3BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 432EA30A294A049500BAB3BA /* Preview Assets.xcassets */; };
+		432EA313294A054500BAB3BA /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 432EA312294A054500BAB3BA /* OpenAIKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432EA313294A054500BAB3BA /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = AImageGenerator;
+			packageProductDependencies = (
+				432EA312294A054500BAB3BA /* OpenAIKit */,
+			);
 			productName = AImageGenerator;
 			productReference = 432EA300294A049400BAB3BA /* AImageGenerator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 432EA2F7294A049400BAB3BA;
+			packageReferences = (
+				432EA311294A054500BAB3BA /* XCRemoteSwiftPackageReference "OpenAIKit" */,
+			);
 			productRefGroup = 432EA301294A049400BAB3BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		432EA311294A054500BAB3BA /* XCRemoteSwiftPackageReference "OpenAIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MarcoDotIO/OpenAIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		432EA312294A054500BAB3BA /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 432EA311294A054500BAB3BA /* XCRemoteSwiftPackageReference "OpenAIKit" */;
+			productName = OpenAIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 432EA2F8294A049400BAB3BA /* Project object */;
 }
