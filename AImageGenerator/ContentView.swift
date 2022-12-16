@@ -11,12 +11,10 @@ import OpenAIKit
 struct ContentView: View {
     
     @ObservedObject var imageViewModel = ImageViewModel()
-    //    @ObservedObject var viewModel = ImageViewModel()
     @State var text = ""
     @State var image: UIImage?
     @State private var showingSheet = false
     @State var isLoading = false
-
     
     var body: some View {
         NavigationView{
@@ -40,11 +38,10 @@ struct ContentView: View {
                     .padding()
                     .overlay(
                         Capsule(style: .continuous)
-                            .stroke(Color.yellow, style: StrokeStyle(lineWidth: 1, dash: [22]))
+                            .stroke(Color.yellow, style: StrokeStyle(lineWidth: 1.5, dash: [22]))
                     )
                 
                 Spacer().frame(height: 20)
-                
                 
                 HStack{
                     
@@ -73,14 +70,11 @@ struct ContentView: View {
                         .background(Color.yellow.cornerRadius(30))
                         .foregroundColor(.white)
                     }
-                    
-                    
+           
                 }
-                
-                
-                
+        
             }
-            .navigationTitle("AI Image Generator")
+            .navigationTitle("Prompt to Image")
             .onAppear{
                 imageViewModel.setup()
             }
@@ -104,7 +98,7 @@ struct MyProgress: View {
             .frame(width: 30, height: 30)
             .rotationEffect(Angle(degrees: isLoading ? 360 : 0))
             .animation(.linear
-                        .repeatForever(autoreverses: false), value: isLoading)
+                .repeatForever(autoreverses: false), value: isLoading)
             .onAppear {
                 isLoading = true
             }
